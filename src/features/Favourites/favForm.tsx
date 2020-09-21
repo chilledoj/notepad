@@ -59,10 +59,19 @@ const FavForm: FC<FavFormProps> = ({ fav, onSubmit }: FavFormProps) => {
           {
             type: 'url',
             message: 'Must be a valid url',
+            validator: (rule, value): Promise<void> => {
+              try{
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                const _ = new URL(value)
+                return Promise.resolve()
+              }catch(e){
+                return Promise.reject(rule.message)
+              }
+            }
           },
         ]}
       >
-        <Input />
+        <Input type="url"/>
       </Form.Item>
       <Form.Item
         name="tags"
