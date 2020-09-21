@@ -7,7 +7,7 @@ const { TabPane } = Tabs;
 const fullHeight = {
   height: '100%',
   minHeight: '90%',
-  marginBottom: 64,
+  overflow: 'auto'
 };
 
 type TabsProps = {
@@ -24,7 +24,7 @@ const TabLayout: FC<TabsProps> = ({ favs, notes }: TabsProps) => {
       style={{ ...fullHeight }}
       type="card"
       activeKey={selectedTab}
-      onTabClick={(key) => {
+      onTabClick={(key): void => {
         setSelectedTab(key);
       }}
     >

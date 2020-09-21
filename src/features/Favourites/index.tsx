@@ -126,7 +126,7 @@ const Favourites: FC = () => {
                   }
                   description={fav.subtitle}
                 />
-                <Button type="link" href={fav.url} target="_blank" rel="noreferrer">
+                <Button type="link" href={fav.url} target="_blank" rel="noreferrer" style={{ whiteSpace: 'nowrap',overflow: 'hidden', textOverflow: 'ellipsis', }}>
                   {fav.url}
                 </Button>
                 <SimpleTagList tags={fav.tags} vertical />

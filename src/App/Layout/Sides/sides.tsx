@@ -5,9 +5,8 @@ import './sides.less';
 
 const { TabPane } = Tabs;
 
-const bottomSpace = {
-  paddingBottom: '1rem',
-  marginBottom: '3rem',
+const overflow = {
+  overflow: 'auto'
 }
 
 type SidesProps = {
@@ -17,15 +16,15 @@ type SidesProps = {
 
 const Sides: FC<SidesProps> = ({ left, right }: SidesProps) => {
   return (
-    <SplitPane split="vertical" defaultSize="40%" primary="first">
-      <div style={bottomSpace}>
+    <SplitPane split="vertical" defaultSize="40%" primary="first" style={overflow}>
+      <div>
         <Tabs defaultActiveKey="favs" size="large" style={{ marginBottom: 32 }} type="card">
           <TabPane tab="Favourites" key="favs">
             {left}
           </TabPane>
         </Tabs>
       </div>
-      <div style={bottomSpace}>
+      <div >
         <Tabs defaultActiveKey="favs" size="large" style={{ marginBottom: 32 }} type="card">
           <TabPane tab="Notes" key="notes">
             {right}
